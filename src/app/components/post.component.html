@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="status-bar" [class.offline]="offline">
+    <div class="status-icon" [class.offline]="offline"></div>
+    <span class="status-text">{{ offline ? "offline" : "online" }}</span>
+  </div>
+
+  <div class="content">
+    <section class="posts-section">
+      <h2>Posts list</h2>
+      @for (post of posts; track post.id) {
+      <div class="post-item">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.content }}</p>
+      </div>
+      }
+    </section>
+
+    <section class="categories-section">
+      <h2>Categories list</h2>
+      <ul>
+        @for (category of categories; track category.id) {
+        <li>
+          {{ category.name }}
+        </li>
+        }
+      </ul>
+    </section>
+  </div>
+</div>
