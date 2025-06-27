@@ -29,12 +29,13 @@
   ],
   "dataGroups": [
     {
-      "name": "api",
-      "urls": ["/api/**"],
+      "name": "api-freshness",
+      "urls": ["/api/posts", "/api/categories"],
       "cacheConfig": {
-        "maxSize": 10,
-        "maxAge": "1d",
-        "timeout": "30s"
+        "strategy": "freshness",
+        "maxSize": 100,
+        "maxAge": "1h",
+        "timeout": "10s"
       }
     }
   ]

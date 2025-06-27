@@ -1,8 +1,9 @@
 import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from "@angular/core";
-import { Category, Post } from "../models/blog";
-import { DataService } from "../services/data.service.";
+import { Category, Post } from "../../models/blog";
+
 import { Subscription } from "rxjs";
 import { CommonModule, isPlatformBrowser } from "@angular/common";
+import { DataService } from "../../services/data.service";
 @Component({
     selector: 'app-post',
     templateUrl: './post.component.html',

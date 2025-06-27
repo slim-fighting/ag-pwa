@@ -5,7 +5,8 @@ import cors from 'cors';
 const categories = [
     { id: 1, name: 'skills' },
     { id: 2, name: 'life' },
-    { id: 3, name: 'notes' }
+    { id: 3, name: 'notes' },
+    { id: 4, name: 'others' }
 ];
 
 const posts = [
@@ -33,17 +34,19 @@ const posts = [
 ];
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:4200',
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
 }));
 
 app.get('/api/posts', (req, res) => {
+    console.log('posts is called');
     res.send(posts);
 });
 
 app.get("/api/categories", (req, res) => {
+    console.log('categories is called');
     res.send(categories);
 });
 
